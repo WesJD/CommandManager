@@ -5,7 +5,7 @@ An annotation based command system for Sponge.
 This relies on [Google Reflections](https://code.google.com/archive/p/reflections/) to register classes. There is currently no alternatives to this.
 
 ## How to use
-### Initialize the manager and reigster commands
+### Initialize the manager and register commands
 ```java
     @Listener
     public void onServerStarting(GameStartingServerEvent e) {
