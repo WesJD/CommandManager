@@ -27,33 +27,27 @@ public class SafeReflections {
 
     private Reflections internal;
     private boolean noArgs;
-    private String pkg;
 
     public SafeReflections(String pkg) {
         this(pkg, false);
     }
 
     public SafeReflections(String pkg, boolean noArgs) {
-        this.pkg = pkg;
         this.noArgs = noArgs;
+        this.internal = new Reflections(
+                new ConfigurationBuilder()
+                        .setScanners(new SubTypesScanner(false), new ResourcesScanner())
+                        .setUrls(ClasspathHelper.forClassLoader(new ClassLoader[] { ClasspathHelper.contextClassLoader(), ClasspathHelper.staticClassLoader() }))
+                        .filterInputsBy(new FilterBuilder().include(FilterBuilder.prefix(pkg)))
+        );
     }
 
     public <T> Set<Class<? extends T>> getSubTypesOf(Class<T> type) {
-        updateInternal(!type.isAssignableFrom(Object.class));
         return internal.getSubTypesOf(type)
                 .stream()
                 .filter(clazz -> !clazz.isAnnotationPresent(ReflectIgnore.class))
                 .filter(clazz -> Arrays.stream(clazz.getConstructors()).anyMatch(c -> c.getParameterTypes().length == 0 || !noArgs))
                 .collect(Collectors.toSet());
-    }
-
-    private void updateInternal(boolean stc) {
-        internal = new Reflections(
-                new ConfigurationBuilder()
-                        .setScanners(new SubTypesScanner(stc), new ResourcesScanner())
-                        .setUrls(ClasspathHelper.forClassLoader(new ClassLoader[] { ClasspathHelper.contextClassLoader(), ClasspathHelper.staticClassLoader() }))
-                        .filterInputsBy(new FilterBuilder().include(FilterBuilder.prefix(pkg)))
-        );
     }
 
     public Reflections getWrapped() {
