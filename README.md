@@ -1,5 +1,5 @@
 # CommandManager
-An annotation based command system for Sponge.
+An annotation based command system for [Sponge](https://www.spongepowered.org/).
 
 ## Dependencies
 This relies on [Google Reflections](https://code.google.com/archive/p/reflections/) to register classes. There is currently no alternatives to this.
