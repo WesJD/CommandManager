@@ -25,8 +25,8 @@ import java.util.stream.Collectors;
  */
 public class SafeReflections {
 
-    private Reflections internal;
-    private boolean noArgs;
+    private final Reflections internal;
+    private final boolean noArgs;
 
     public SafeReflections(String pkg) {
         this(pkg, false);

@@ -25,8 +25,8 @@ import java.util.*;
  */
 public class CommandManager {
 
-    private static CommandManager instance = new CommandManager();
-    private Set<CommandData> commands = new HashSet<>();
+    private static final CommandManager instance = new CommandManager();
+    private final Set<CommandData> commands = new HashSet<>();
     private boolean initialized = false;
 
     private CommandManager() {}
