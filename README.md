@@ -34,6 +34,26 @@ Also be aware that you do not have to use the required arguments and can handle 
     }
 ```
 
+### Importing
+Either put the source into your project or shade it in with Maven. 
+```xml
+<dependencies>
+    <dependency>
+        <groupId>me.wes</groupId>
+        <artifactId>CommandManager</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </dependency>
+</dependencies>
+
+<repositories>
+    <repository>
+        <id>buildstatic-repo</id>
+        <name>BuildStatic Repository</name>
+        <url>http://buildstatic.net/maven-repo</url>
+    </repository>
+</repositories>
+```
+
 Hope you use this well.
 
 ## "Credits"
