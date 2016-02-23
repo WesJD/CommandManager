@@ -56,5 +56,5 @@ Either put the source into your project or shade it in with Maven.
 
 Hope you use this well.
 
-## "Credits"
-TheMrGong - SafeReflections (even though I rewrote it for him)
+## License
+This project is registered under the [MIT License](LICENSE.txt).
