@@ -11,18 +11,6 @@ import java.util.Arrays;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-/**
- * ~=~~=~~=~~=~~=~~=~~=~~=~~=~~=~~=~~=~~=~~=~~=~~=~~=~~=~~=~~=~~=~~=~~=~~=~~=~~=~~=~
- * Copyright TheMrGong (c) 2015. All Rights Reserved.
- * Any code contained within this java file is the sole property of TheMrGong.
- * You may not distribute, take snippets, reproduce, or claim any code
- * as your own. Doing so will result in void with any agreements with you.
- * Stop flopping around.
- * ---------------------
- * File Info
- * File created: 1/7/2016
- * ~=~~=~~=~~=~~=~~=~~=~~=~~=~~=~~=~~=~~=~~=~~=~~=~~=~~=~~=~~=~~=~~=~~=~~=~~=~~=~~=~
- */
 public class SafeReflections {
 
     private final Reflections internal;
