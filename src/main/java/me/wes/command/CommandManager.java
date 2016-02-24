@@ -25,7 +25,7 @@
 
 package me.wes.command;
 
-import me.wes.command.util.reflections.SafeReflections;
+import net.buildstatic.util.reflections.SafeReflections;
 import org.spongepowered.api.Sponge;
 import org.spongepowered.api.command.CommandSource;
 import org.spongepowered.api.event.Listener;

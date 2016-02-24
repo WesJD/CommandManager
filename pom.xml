@@ -13,12 +13,11 @@
             <id>sponge-maven-repo</id>
             <name>Sponge maven repo</name>
             <url>http://repo.spongepowered.org/maven</url>
-            <releases>
-                <enabled>true</enabled>
-            </releases>
-            <snapshots>
-                <enabled>true</enabled>
-            </snapshots>
+        </repository>
+        <repository>
+            <id>buildstatic-repo</id>
+            <name>BuildStatic Repository</name>
+            <url>http://serv.buildstatic.net/maven-repo</url>
         </repository>
     </repositories>
 
@@ -34,6 +33,11 @@
             <artifactId>reflections</artifactId>
             <version>0.9.10</version>
             <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>net.buildstatic.util</groupId>
+            <artifactId>SafeReflections</artifactId>
+            <version>1.0-SNAPSHOT</version>
         </dependency>
     </dependencies>
 
