@@ -49,7 +49,7 @@ Either put the source into your project or shade it in with Maven.
     <repository>
         <id>buildstatic-repo</id>
         <name>BuildStatic Repository</name>
-        <url>http://buildstatic.net/maven-repo</url>
+        <url>http://serv.buildstatic.net/maven-repo</url>
     </repository>
 </repositories>
 ```
