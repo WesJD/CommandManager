@@ -2,7 +2,7 @@
 An annotation based command system for [Sponge](https://www.spongepowered.org/).
 
 ## Dependencies
-This relies on [Google Reflections](https://code.google.com/archive/p/reflections/) to register classes. There is currently no alternatives to this.
+This relies on [SafeReflections](https://github.com/BuildStatic/SafeReflections) to register classes. There is currently no alternatives to this.
 
 ## How to use
 ### Initialize the manager and register commands
