@@ -6,7 +6,7 @@
 
     <groupId>me.wes</groupId>
     <artifactId>CommandManager</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.1-SNAPSHOT</version>
 
     <repositories>
         <repository>
@@ -31,8 +31,22 @@
         <dependency>
             <groupId>net.buildstatic.util</groupId>
             <artifactId>SafeReflections</artifactId>
-            <version>1.0-SNAPSHOT</version>
+            <version>1.1-SNAPSHOT</version>
             <scope>compile</scope>
+        </dependency>
+
+        <!-- Testing -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.11</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.github.stefanbirkner</groupId>
+            <artifactId>system-rules</artifactId>
+            <version>1.16.0</version>
+            <scope>test</scope>
         </dependency>
     </dependencies>
 

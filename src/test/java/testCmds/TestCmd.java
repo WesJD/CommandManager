@@ -22,39 +22,20 @@
  * SOFTWARE.
  */
 
+package testCmds;
 
-package me.wes.command.test.util;
+import me.wes.command.Command;
+import org.junit.Assert;
+import org.spongepowered.api.command.CommandSource;
+import org.spongepowered.api.text.Text;
 
-public class Logging {
+import java.util.Arrays;
 
-    private static final String PREFIX = "Sponge Testing";
+public class TestCmd {
 
-    public static void logStatistic(String message) {
-        logWithExtra("Statistic", message);
-    }
-
-    public static void logDebug(String message) {
-        logWithExtra("Debug", message);
-    }
-
-    public static void logError(String message) {
-        logWithExtra("Error", message);
-    }
-
-    public static void logWarning(String message) {
-        logWithExtra("Warning", message);
-    }
-
-    public static void logInfo(String message) {
-        logWithExtra("Info", message);
-    }
-
-    public static void logWithExtra(String extra, String message) {
-        System.out.println(PREFIX + ": " + extra + " | " + message);
-    }
-
-    public static void log(String message) {
-        System.out.println(PREFIX + " | " + message);
+    @Command(name = "test", aliases = "t, t2")
+    public void onCmd(String[] args) {
+        Arrays.stream(args).forEach(msg -> System.out.println("got argument: " + msg));
     }
 
 }

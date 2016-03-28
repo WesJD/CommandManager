@@ -41,7 +41,7 @@ Either put the source into your project or shade it in with Maven.
     <dependency>
         <groupId>me.wes</groupId>
         <artifactId>CommandManager</artifactId>
-        <version>1.0-SNAPSHOT</version>
+        <version>1.1-SNAPSHOT</version>
     </dependency>
 </dependencies>
 

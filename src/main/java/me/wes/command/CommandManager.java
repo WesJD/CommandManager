@@ -94,7 +94,7 @@ public class CommandManager {
         private Method method;
         private Object object;
 
-        public CommandData(Command command, Method method, Object object) {
+        private CommandData(Command command, Method method, Object object) {
             this.command = command;
             this.method = method;
             this.object = object;
@@ -121,30 +121,29 @@ public class CommandManager {
         @Listener
         public void onCommandSend(SendCommandEvent e) {
             try {
-                Optional<CommandData> correspondingCommand = getCommand(e.getCommand());
+                final Optional<CommandData> correspondingCommand = getCommand(e.getCommand());
                 if(correspondingCommand.isPresent()) {
                     e.setCancelled(true);
-                    Optional<CommandSource> sourceOptional = e.getCause().first(CommandSource.class);
-                    CommandData data = correspondingCommand.get();
-                    Method method = data.getMethod();
+                    final Optional<CommandSource> sourceOptional = e.getCause().first(CommandSource.class);
+                    final CommandData data = correspondingCommand.get();
+                    final Method method = data.getMethod();
                     if(sourceOptional.isPresent() && method.getParameterCount() > 0) {
-                        CommandSource source = sourceOptional.get();
-                        String[] arguments = (e.getArguments().length() > 0 ? e.getArguments().split(" ") : new String[0]);
-                        String[] usages = (data.getCommand().usage().length() > 0 ? data.getCommand().usage().split(data.getCommand().separator()) : new String[0]);
+                        final CommandSource source = sourceOptional.get();
+                        final String[] arguments = (e.getArguments().length() > 0 ? e.getArguments().split(" ") : new String[0]);
+                        final String[] usages = (data.getCommand().usage().length() > 0 ? data.getCommand().usage().split(data.getCommand().separator()) : new String[0]);
                         if(arguments.length >= data.getCommand().requiredArgs()) {
-                            Object[] suppliedParams = new Object[method.getParameterCount()];
+                            final Object[] suppliedParams = new Object[method.getParameterCount()];
+                            final int[] cur = new int[1];
                             Arrays.stream(method.getParameters()).forEach(param -> {
                                 Object supply = null;
                                 if(param.getType().equals(CommandSource.class)) supply = source;
                                 else if(param.getType().equals(String[].class)) supply = arguments;
 
-                                int cur = 0;
-                                for(Object obj : suppliedParams) if(obj != null) cur++; else break;
-                                suppliedParams[cur] = supply;
+                                suppliedParams[cur[0]++] = supply;
                             });
                             method.invoke(data.getInstantiatedClass(), suppliedParams);
                         } else {
-                            String message = (usages.length > arguments.length ? usages[arguments.length] : "Not enough arguments.");
+                            final String message = (usages.length > arguments.length ? usages[arguments.length] : "Not enough arguments.");
                             source.sendMessage(Text.builder(message).color(TextColors.RED).build());
                         }
                     }
