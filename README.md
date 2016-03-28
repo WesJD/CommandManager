@@ -1,4 +1,4 @@
-# CommandManager
+# CommandManager [![Build Status](https://travis-ci.org/WesJD/CommandManager.svg?branch=master)](https://travis-ci.org/WesJD/CommandManager)
 An annotation based command system for [Sponge](https://www.spongepowered.org/).
 
 ## Dependencies
