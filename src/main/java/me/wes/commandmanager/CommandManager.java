@@ -25,7 +25,7 @@
 
 package me.wes.commandmanager;
 
-import net.buildstatic.util.reflections.SafeReflections;
+import net.buildstatic.util.safereflections.SafeReflections;
 import org.spongepowered.api.Sponge;
 import org.spongepowered.api.command.CommandSource;
 import org.spongepowered.api.event.Listener;
