@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>me.wes</groupId>
-    <artifactId>CommandManager</artifactId>
+    <artifactId>commandmanager</artifactId>
     <version>1.1-SNAPSHOT</version>
 
     <repositories>
@@ -30,8 +30,8 @@
         </dependency>
         <dependency>
             <groupId>net.buildstatic.util</groupId>
-            <artifactId>SafeReflections</artifactId>
-            <version>1.1-SNAPSHOT</version>
+            <artifactId>safereflections</artifactId>
+            <version>1.1.1-SNAPSHOT</version>
             <scope>compile</scope>
         </dependency>
 
@@ -88,7 +88,7 @@
         <repository>
             <id>buildstatic-repo</id>
             <name>BuildStatic Repository</name>
-            <url>sftp://serv.buildstatic.net/var/www/html/maven-repo</url>
+            <url>sftp://serv.buildstatic.net/maven-repo</url>
         </repository>
     </distributionManagement>
 

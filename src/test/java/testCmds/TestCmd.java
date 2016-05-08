@@ -24,10 +24,7 @@
 
 package testCmds;
 
-import me.wes.command.Command;
-import org.junit.Assert;
-import org.spongepowered.api.command.CommandSource;
-import org.spongepowered.api.text.Text;
+import me.wes.commandmanager.Command;
 
 import java.util.Arrays;
 

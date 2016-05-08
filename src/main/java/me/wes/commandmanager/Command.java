@@ -23,7 +23,7 @@
  */
 
 
-package me.wes.command;
+package me.wes.commandmanager;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

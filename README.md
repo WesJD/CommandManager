@@ -40,9 +40,10 @@ Either put the source into your project or shade it in with Maven.
 <dependencies>
     <dependency>
         <groupId>me.wes</groupId>
-        <artifactId>CommandManager</artifactId>
+        <artifactId>commandmanager</artifactId>
         <version>1.1-SNAPSHOT</version>
     </dependency>
+    ...
 </dependencies>
 
 <repositories>
@@ -51,8 +52,10 @@ Either put the source into your project or shade it in with Maven.
         <name>BuildStatic Repository</name>
         <url>http://serv.buildstatic.net/maven-repo</url>
     </repository>
+    ...
 </repositories>
 ```
+alternatively, you can download a jar [here](http://ci.buildstatic.net/job/CommandManager/).
 
 Hope you use this well.
 

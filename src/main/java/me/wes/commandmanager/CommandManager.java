@@ -23,7 +23,7 @@
  */
 
 
-package me.wes.command;
+package me.wes.commandmanager;
 
 import net.buildstatic.util.reflections.SafeReflections;
 import org.spongepowered.api.Sponge;

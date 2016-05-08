@@ -22,13 +22,12 @@
  * SOFTWARE.
  */
 
-import me.wes.command.Command;
-import me.wes.command.CommandManager;
+import me.wes.commandmanager.Command;
+import me.wes.commandmanager.CommandManager;
 import org.junit.Rule;
 import org.junit.contrib.java.lang.system.SystemOutRule;
 import org.spongepowered.api.command.CommandResult;
 import org.spongepowered.api.command.CommandSource;
-import org.spongepowered.api.event.SpongeEventFactory;
 import org.spongepowered.api.event.cause.Cause;
 import org.spongepowered.api.event.cause.NamedCause;
 import org.spongepowered.api.event.command.SendCommandEvent;
@@ -40,7 +39,6 @@ import org.spongepowered.api.text.Text;
 import org.spongepowered.api.text.channel.MessageChannel;
 import org.spongepowered.api.util.Tristate;
 
-import java.beans.MethodDescriptor;
 import java.lang.reflect.*;
 import java.util.List;
 import java.util.Optional;
@@ -59,7 +57,7 @@ public class Test {
         try {
             //I literally hacked my own code......
 
-            final Class<?> commandManagerClazz = Class.forName("me.wes.command.CommandManager");
+            final Class<?> commandManagerClazz = Class.forName("me.wes.commandmanager.CommandManager");
             final Constructor<?> commandManagerConstructor = commandManagerClazz.getDeclaredConstructor();
             commandManagerConstructor.setAccessible(true);
             final CommandManager commandManagerObject = (CommandManager) commandManagerConstructor.newInstance();
@@ -75,7 +73,7 @@ public class Test {
             modifiersField.setInt(commandsField, commandsField.getModifiers() & ~Modifier.FINAL);
             final Set localCommands = (Set) commandsField.get(commandManagerObject);
 
-            final Class<?> commandDataClazz = Class.forName("me.wes.command.CommandManager$CommandData");
+            final Class<?> commandDataClazz = Class.forName("me.wes.commandmanager.CommandManager$CommandData");
             final Constructor<?> commandDataConstrcutor = commandDataClazz.getDeclaredConstructor(commandManagerClazz, Command.class, Method.class, Object.class);
             commandDataConstrcutor.setAccessible(true);
             final TestCmd testCmd = new TestCmd();
