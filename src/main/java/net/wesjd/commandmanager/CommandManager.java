@@ -23,9 +23,9 @@
  */
 
 
-package me.wes.commandmanager;
+package net.wesjd.commandmanager;
 
-import net.buildstatic.util.safereflections.SafeReflections;
+import org.reflections.Reflections;
 import org.spongepowered.api.Sponge;
 import org.spongepowered.api.command.CommandSource;
 import org.spongepowered.api.event.Listener;
@@ -63,7 +63,7 @@ public class CommandManager {
 
     public void registerClassesOf(String pkg) {
         if(!initialized) throw new RuntimeException("The CommandManager must be initialized before use.");
-        new SafeReflections(pkg).getSubTypesOf(Object.class)
+        new Reflections(pkg).getSubTypesOf(Object.class)
                 .stream()
                 .filter(clazz -> Arrays.stream(clazz.getMethods()).anyMatch(m -> m.isAnnotationPresent(Command.class)))
                 .forEach(clazz -> {

@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>me.wes</groupId>
+    <groupId>net.wesjd</groupId>
     <artifactId>commandmanager</artifactId>
     <version>1.1-SNAPSHOT</version>
 
@@ -13,11 +13,6 @@
             <id>sponge-maven-repo</id>
             <name>Sponge maven repo</name>
             <url>http://repo.spongepowered.org/maven</url>
-        </repository>
-        <repository>
-            <id>buildstatic-repo</id>
-            <name>BuildStatic Repository</name>
-            <url>http://serv.buildstatic.net/maven-repo</url>
         </repository>
     </repositories>
 
@@ -29,9 +24,9 @@
             <scope>provided</scope>
         </dependency>
         <dependency>
-            <groupId>net.buildstatic.util</groupId>
-            <artifactId>safereflections</artifactId>
-            <version>1.1.1-SNAPSHOT</version>
+            <groupId>org.reflections</groupId>
+            <artifactId>reflections</artifactId>
+            <version>0.9.10</version>
             <scope>compile</scope>
         </dependency>
 
@@ -86,9 +81,8 @@
 
     <distributionManagement>
         <repository>
-            <id>buildstatic-repo</id>
-            <name>BuildStatic Repository</name>
-            <url>sftp://serv.buildstatic.net/maven-repo</url>
+            <id>wesjd-repo</id>
+            <url>http://wesjd.net:8081/repository/thirdparty/</url>
         </repository>
     </distributionManagement>
 

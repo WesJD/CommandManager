@@ -24,7 +24,7 @@
 
 package testCmds;
 
-import me.wes.commandmanager.Command;
+import net.wesjd.commandmanager.Command;
 
 import java.util.Arrays;
 

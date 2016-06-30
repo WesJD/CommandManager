@@ -22,8 +22,8 @@
  * SOFTWARE.
  */
 
-import me.wes.commandmanager.Command;
-import me.wes.commandmanager.CommandManager;
+import net.wesjd.commandmanager.Command;
+import net.wesjd.commandmanager.CommandManager;
 import org.junit.Rule;
 import org.junit.contrib.java.lang.system.SystemOutRule;
 import org.spongepowered.api.command.CommandResult;
@@ -57,7 +57,7 @@ public class Test {
         try {
             //I literally hacked my own code......
 
-            final Class<?> commandManagerClazz = Class.forName("me.wes.commandmanager.CommandManager");
+            final Class<?> commandManagerClazz = Class.forName("CommandManager");
             final Constructor<?> commandManagerConstructor = commandManagerClazz.getDeclaredConstructor();
             commandManagerConstructor.setAccessible(true);
             final CommandManager commandManagerObject = (CommandManager) commandManagerConstructor.newInstance();
@@ -73,7 +73,7 @@ public class Test {
             modifiersField.setInt(commandsField, commandsField.getModifiers() & ~Modifier.FINAL);
             final Set localCommands = (Set) commandsField.get(commandManagerObject);
 
-            final Class<?> commandDataClazz = Class.forName("me.wes.commandmanager.CommandManager$CommandData");
+            final Class<?> commandDataClazz = Class.forName("CommandManager$CommandData");
             final Constructor<?> commandDataConstrcutor = commandDataClazz.getDeclaredConstructor(commandManagerClazz, Command.class, Method.class, Object.class);
             commandDataConstrcutor.setAccessible(true);
             final TestCmd testCmd = new TestCmd();

@@ -1,8 +1,8 @@
-# CommandManager [![Build Status](https://travis-ci.org/WesJD/CommandManager.svg?branch=master)](https://travis-ci.org/WesJD/CommandManager)
+# CommandManager [![Build Status](https://drone.io/github.com/WesJD/CommandManager/status.png)](https://drone.io/github.com/WesJD/CommandManager/latest)
 An annotation based command system for [Sponge](https://www.spongepowered.org/).
 
 ## Dependencies
-This relies on [SafeReflections](https://github.com/BuildStatic/SafeReflections) to register classes. There is currently no alternatives to this.
+This relies on [Reflections](https://github.com/ronmamo/reflections) to register classes. There is currently no alternatives to this.
 
 ## How to use
 ### Initialize the manager and register commands
@@ -39,7 +39,7 @@ Either put the source into your project or shade it in with Maven.
 ```xml
 <dependencies>
     <dependency>
-        <groupId>me.wes</groupId>
+        <groupId>net.wesjd</groupId>
         <artifactId>commandmanager</artifactId>
         <version>1.1-SNAPSHOT</version>
     </dependency>
@@ -48,14 +48,13 @@ Either put the source into your project or shade it in with Maven.
 
 <repositories>
     <repository>
-        <id>buildstatic-repo</id>
-        <name>BuildStatic Repository</name>
-        <url>http://serv.buildstatic.net/maven-repo</url>
+        <id>wesjd-repo</id>
+        <url>http://wesjd.net:8081/repository/thirdparty/</url>
     </repository>
     ...
 </repositories>
 ```
-alternatively, you can download a jar [here](http://ci.buildstatic.net/job/CommandManager/).
+alternatively, you can download a jar [here](https://drone.io/github.com/WesJD/CommandManager/files).
 
 Hope you use this well.
 
