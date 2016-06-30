@@ -13,7 +13,7 @@ This relies on [Reflections](https://github.com/ronmamo/reflections) to register
         CommandManager.getInstance().registerClassesOf("my.package.with.command.classes");
     }
 ```
-Call `CommandManager#initialize(Object plugin)` with your class annotated with `@Plugin` as the parameter. Then call `CommandManager#registerClassesOf(String pkg)` with your package of command classes. They don't all have to be command classes though, they are filtered. If you do not want a class registered, annotate it with `@ReflectIgnore`. You can call `#registerClassesOf` as many times as you would like to reigster different packages. Do note that [Reflections](https://code.google.com/archive/p/reflections/) will search nested packages too, so it's got you covered.
+Call `CommandManager#initialize(Object plugin)` with your class annotated with `@Plugin` as the parameter. Then call `CommandManager#registerClassesOf(String pkg)` with your package of command classes. They don't all have to be command classes though, they are filtered. You can call `#registerClassesOf` as many times as you would like to reigster different packages. Do note that [Reflections](https://github.com/ronmamo/reflections) will search nested packages too, so it's got you covered.
 
 ### Creating a command
 ```java
